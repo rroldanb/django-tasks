@@ -90,15 +90,21 @@ WSGI_APPLICATION = 'djangocrud.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         # Replace this value with your local database's connection string.
+#         default='postgresql://postgres:1234@localhost:5432/tasks',
+#         # default='postgresql://gago:jvwqJKix38oxpoWDnLjrpqG5RnIMTpqA@dpg-d6c91ujh46gs73e47570-a/testpg_ovbj',
+#         conn_max_age=600
+#     )
+# }
+
+
 DATABASES = {
-    'default': dj_database_url.config(
-        # Replace this value with your local database's connection string.
-        default='postgresql://postgres:1234@localhost:5432/tasks',
-        # default='postgresql://gago:jvwqJKix38oxpoWDnLjrpqG5RnIMTpqA@dpg-d6c91ujh46gs73e47570-a/testpg_ovbj',
-        conn_max_age=600
+    "default": dj_database_url.parse(
+        os.environ.get("DATABASE_URL")
     )
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
