@@ -1,0 +1,22 @@
+databases:
+  - name: test-pg
+    plan: free
+    databaseName: tasks
+    user: tasks
+
+services:
+  - type: web
+    plan: free
+    name: tasks
+    runtime: python
+    buildCommand: './build.sh'
+    startCommand: 'python -m gunicorn tasks.asgi:application -k uvicorn.workers.UvicornWorker'
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: tasksdb
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: 4

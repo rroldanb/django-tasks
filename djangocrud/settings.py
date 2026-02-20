@@ -93,7 +93,7 @@ WSGI_APPLICATION = 'djangocrud.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
-        default='postgresql://postgres:1234@localhost:5432/postgres',
+        default='postgresql://postgres:1234@localhost:5432/tasks',
         conn_max_age=600
     )
 }
