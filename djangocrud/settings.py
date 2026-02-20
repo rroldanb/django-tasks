@@ -94,6 +94,7 @@ DATABASES = {
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
         default='postgresql://postgres:1234@localhost:5432/tasks',
+        # default='postgresql://gago:jvwqJKix38oxpoWDnLjrpqG5RnIMTpqA@dpg-d6c91ujh46gs73e47570-a/testpg_ovbj',
         conn_max_age=600
     )
 }
