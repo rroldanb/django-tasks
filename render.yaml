@@ -1,7 +1,7 @@
 databases:
   - name: test-pg
     plan: free
-    databaseName: tasks
+    databaseName: testpg_ovbj
     user: tasks
 
 services:
